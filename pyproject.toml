@@ -1,0 +1,11 @@
+[project]
+name = "puzzle-hub-app"
+version = "0.1.0"
+description = "An all-in-one hub for solving Puzzles/Alternate Reality Games (ARGs) collaboratively for small, invite-only teams. The focus is on robust data tracking and centralized team discussion."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "django>=5.2.8",
+    "django-environ>=0.12.0",
+    "psycopg[binary]>=3.3.0",
+]

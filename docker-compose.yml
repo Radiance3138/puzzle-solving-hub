@@ -1,0 +1,50 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: web_app
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_started
+    env_file:
+      - .env
+    restart: on-failure
+    networks:
+      - puzzle_network
+
+  db:
+    image: postgres:17
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    networks:
+      - puzzle_network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - "5050:80"
+    env_file:
+      - .env
+    depends_on:
+      db:
+        condition: service_started
+    restart: on-failure
+    networks:
+      - puzzle_network
+
+networks:
+  puzzle_network:
+    driver: bridge
+
+volumes:
+  postgres_data:

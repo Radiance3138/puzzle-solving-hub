@@ -1,0 +1,28 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Django-specific files
+*.log
+*.pot
+*.pyc
+static/
+media/
+
+# Environment variables file
+.env
+
+# Virtual environments
+.venv
+
+# Docker-specific files
+.dockerignore
+postgres_data/
+puzzle_db
+
+# VSCode settings
+.vscode/
