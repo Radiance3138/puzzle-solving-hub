@@ -16,7 +16,7 @@
 ## 1. About the Project
 
 ### Description
-    An invite-only, web-based hub for small teams to collaboratively solve Alternate Reality Games (ARGs) and other complex puzzles, featuring advanced analytical tools and centralized version history.
+An invite-only, web-based hub for small teams to collaboratively solve Alternate Reality Games (ARGs) and other complex puzzles, featuring advanced analytical tools and centralized version history.
 
 ### Key Features
 
