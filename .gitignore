@@ -12,6 +12,7 @@ wheels/
 *.pyc
 static/
 media/
+avatars/
 
 # Environment variables file
 .env
