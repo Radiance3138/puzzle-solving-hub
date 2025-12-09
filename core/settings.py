@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
-import environ
+import environ # type: ignore
 import os
 
 
@@ -50,7 +50,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # apps 
+    # packages
+    'django_extensions',
+    'django_cleanup.apps.CleanupConfig',
+    # apps
+    'users.apps.UsersConfig',
     'puzzles',
 ]
 
