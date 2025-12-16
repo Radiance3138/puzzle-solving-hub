@@ -18,7 +18,6 @@ class SourceTextEntryCreateView(CreateView):
     model = SourceTextEntry
     template_name = 'puzzle/source_text_entry.html'
     form_class = SourceTextEntryForm
-    fields = ['cipher_text', 'plain_text', 'method', 'key']
     success_url = reverse_lazy('source_text_entry_list')
 
     def form_valid(self, form):
@@ -37,7 +36,6 @@ class SourceTextEntryUpdateView(UpdateView):
     model = SourceTextEntry
     template_name = 'puzzle/source_text_entry_update.html'
     form_class = SourceTextEntryForm
-    fields = ['cipher_text', 'plain_text', 'method', 'key']
     success_url = reverse_lazy('source_text_entry_list')
     
     def form_valid(self, form):

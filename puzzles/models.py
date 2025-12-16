@@ -6,10 +6,10 @@ from users.models import ArgUserProfile
 # TODO: figure out cipher method field (fk or choicefield?)
 
 class PuzzleHub(models.Model):
-    # Define fields for the PuzzleHub model
+    id = models.AutoField(primary_key=True, unique=True, editable=False)
     title = models.CharField(max_length=200)
-    description = models.TextField()
-    source_url = models.URLField()
+    description = models.TextField(blank=True, null=True)
+    source_url = models.URLField(blank=True, null=True)
 
     owner = models.ForeignKey(ArgUserProfile, on_delete=models.CASCADE, related_name='puzzles_owned')
     participants = models.ManyToManyField(ArgUserProfile, related_name='puzzles_participated')
@@ -24,13 +24,12 @@ class PuzzleHub(models.Model):
         default='active')
     created_at = models.DateTimeField(auto_now_add=True)
 
-
-
     def __str__(self):
         return self.title
     
+
 class SourceTextEntry(models.Model):
-    # Define fields for the SourceTextEntry model
+    id = models.AutoField(primary_key=True, unique=True, editable=True)
     cipher_text = models.TextField()
     plain_text = models.TextField()
     method = models.CharField(max_length=100)
